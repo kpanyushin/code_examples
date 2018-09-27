@@ -1,0 +1,225 @@
+.containerPage {
+  position: absolute;
+  top: 14vh;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 14vh);
+  visibility: hidden;
+  background-color: #fff;
+  transform: translateY(100%);
+  opacity: 0;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+  .dotsContainer {
+    position: absolute;
+    bottom: 55vh;
+    width: 30%;
+    left: 2.5vw;
+    display: flex;
+    align-items: center;
+    z-index:1;
+    .arrLeft {
+      position: relative;
+      margin-right: 3%;
+      width: 5%;
+      height:1vw;
+      cursor: pointer;
+      &:after {
+        position: absolute;
+        content: '';
+        top: -0.25vw;
+        left: 0;
+        width: 0.3vw;
+        height: 1vw;
+        transform: rotate(45deg);
+        background-color: #fff;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        bottom: -0.25vw;
+        left: 0;
+        width: 0.3vw;
+        height: 1vw;
+        transform: rotate(-45deg);
+        background-color: #fff;
+      }
+    }
+    .arrRight {
+      position: relative;
+      margin-left: 10%;
+      width: 5%;
+      height:1vw;
+      cursor: pointer;
+      &:after {
+        position: absolute;
+        content: '';
+        top: -0.25vw;
+        left: 0;
+        width: 0.3vw;
+        height: 1vw;
+        transform: rotate(-45deg);
+        background-color: #fff;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        bottom: -0.25vw;
+        left: 0;
+        width: 0.3vw;
+        height: 1vw;
+        transform: rotate(45deg);
+        background-color: #fff;
+      }
+    }
+    .dot {
+      width: 0.2vw;
+      height: 0.2vw;
+      background-color: #fff;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      margin-left: 3%;
+      cursor: pointer;
+    }
+    .dotActive {
+      width: 0.5vw;
+      height: 0.5vw;
+      background-color: transparent;
+      border: 2px solid #903732;
+      border-radius: 50%;
+    }
+  }
+  .item {
+    width: 100%;
+    height: calc(100vh - (14vh));
+    position: relative;
+    z-index:1;
+    .fon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - (14vh));
+      background-color: #4f4756;
+      opacity: 0.4;
+      z-index: 2;
+      display: flex;
+      .leftClick {
+        width: 50%;
+        height: 100%;
+        cursor: url(../../../img/leftArr.png), auto;
+      }
+      .rightClick {
+        width: 50%;
+        height: 100%;
+        transform: rotate(180deg);
+        cursor: url(../../../img/rightArr.png), auto;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 20vh;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#32323d+0,32323d+100&0+0,0.02+23,0.08+36,0.17+46,0.17+47,0.47+69,0.57+78,0.64+91,0.64+96,0.61+100 */
+        background: -moz-linear-gradient(top,  rgba(50,50,61,0) 0%, rgba(50,50,61,0.02) 23%, rgba(50,50,61,0.08) 36%, rgba(50,50,61,0.17) 46%, rgba(50,50,61,0.17) 47%, rgba(50,50,61,0.47) 69%, rgba(50,50,61,0.57) 78%, rgba(50,50,61,0.64) 91%, rgba(50,50,61,0.64) 96%, rgba(50,50,61,0.61) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(50,50,61,0) 0%,rgba(50,50,61,0.02) 23%,rgba(50,50,61,0.08) 36%,rgba(50,50,61,0.17) 46%,rgba(50,50,61,0.17) 47%,rgba(50,50,61,0.47) 69%,rgba(50,50,61,0.57) 78%,rgba(50,50,61,0.64) 91%,rgba(50,50,61,0.64) 96%,rgba(50,50,61,0.61) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(50,50,61,0) 0%,rgba(50,50,61,0.02) 23%,rgba(50,50,61,0.08) 36%,rgba(50,50,61,0.17) 46%,rgba(50,50,61,0.17) 47%,rgba(50,50,61,0.47) 69%,rgba(50,50,61,0.57) 78%,rgba(50,50,61,0.64) 91%,rgba(50,50,61,0.64) 96%,rgba(50,50,61,0.61) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0032323d', endColorstr='#9c32323d',GradientType=0 ); /* IE6-9 */
+      }
+    }
+    .imgSlide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - (14vh));
+      background-size: cover;
+      background-position: center;
+    }
+    .titleContainer {
+      position: absolute;
+      bottom: 20vh;
+      width: 30%;
+      left: 2.5vw;
+      transform: translate(0);
+      z-index:3;
+      .title {
+        padding-right: 109px;
+        color: #fff;
+        font-size: 85px;
+        font-family: "PFDinCondensedRegular", sans-serif;
+        font-weight: 100;
+        @media screen and (max-width: 1230px) {
+          padding-right: 30px;
+        }
+        span {
+          position: relative;
+          &:after {
+            position: absolute;
+            content: '';
+            left: -1vw;
+            top: 10%;
+            background-color: #903732;
+            width: 13px;
+            height: 80%;
+            @media(max-width: 1370px) {
+              width: 6px;
+            }
+          }
+        }
+      }
+      .text {
+        color: #fff;
+        margin-top: 1vw;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        line-height: 20px;
+      }
+    }
+    .btn {
+      font-size: 15px;
+      position: absolute;
+      bottom: 14vh;
+      width: 8%;
+      z-index:3;
+      left: 2vw;
+      background-color: #903732;
+      color: #fff;
+      text-align: center;
+      font-family: 'Open Sans Condensed';
+      font-weight: 700;
+      padding: 0.7vw;
+      letter-spacing: 1px;
+      vertical-align: center;
+      margin-top: 2vw;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: box-shadow .2s ease;
+      &:hover {
+        box-shadow: 0.97px 0.242px 18px 0px rgba(144, 55, 50, 0.63);
+      }
+      svg {
+        margin-bottom: .4%;
+        margin-left: 12%;
+        width: 7%;
+        transform: rotate(180deg);
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.activePage {
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+  opacity: 1;
+}
+.prevPage {
+  transform: translateY(-100%);
+}

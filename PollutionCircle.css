@@ -1,0 +1,115 @@
+.container {
+  height: 80vh;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    @media(max-width: 920px) {
+      height: 135% !important;
+      width: 135% !important;
+      margin-left: -17.5%;
+    }
+  }
+
+  .circleWhiteLeft { 
+    stroke: white;
+    stroke-width: 5px;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-dasharray: 2513;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+  }
+  .circleWhiteRigth { 
+    stroke: white;
+    stroke-width: 5px;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-dasharray: 2513;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: rotate(-90deg);
+  }
+
+  .circleLeft {
+/*    stroke: black !importatnt;*/
+    stroke-width: 15px;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-dasharray: 2513;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: rotate(90deg);
+  }
+  .circleRight {
+    /*stroke: white;*/
+    -webkit-transform-style: preserve-3d;
+    stroke-width: 15px;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-dasharray: 2513;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+
+  .question {
+    font-family: LitteraPlainBook;
+    letter-spacing: 0.1em;
+    font-size: 32px;
+  }
+  .counter {
+    font-family: LitteraPlainBook;
+    letter-spacing: 0.1em;
+    font-size: 38px;
+  }
+  .title {
+    font-family: LitteraPlainBold;
+    fill: white;
+    font-size: 62px;
+    letter-spacing: 0.05em;
+
+    &.min { 
+      font-size: 48px;
+    }
+  }
+  .minutes {
+    stroke: rgba(255,255,255,1);
+    stroke-linecap: round;
+    stroke-width: 35px;    
+    transform-origin: bottom;
+    transform-box: fill-box;
+  }
+  .hours {
+    stroke: rgba(255,255,255,1);
+    stroke-linecap: round;
+    stroke-width: 50px;
+    transform-origin: bottom;
+    transform-box: fill-box;
+  }
+  .values {
+    stroke-width: 20px;
+    stroke-linecap: round;
+  }
+  .percent {
+    font-family: LitteraPlainBook;
+    font-size: 32px;
+    fill: white;
+
+    @media (max-width: 1600px) {
+      font-size: 36px;
+    }
+    @media (max-width: 1366px) {
+      font-size: 42px;
+    }
+  }
+}

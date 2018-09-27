@@ -1,0 +1,301 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  transition: visibility .6s ease;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity .6s ease;
+  }
+  .modalContainer {
+    box-shadow: 3.374px 14.616px 40px 0px rgba(71, 71, 90, 0.06);
+    width: 31.5vw;
+    height: 55vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(0);
+    transition: transform .3s ease;
+    background-color: #fff;
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background-color: #903732;
+      color: rgb(255, 255, 255);
+      padding: 3vh 1vw;
+      .text {
+        margin-left: 8vw;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+        color: #fff;
+      }
+      .close {
+        margin-top: -5px;
+        cursor: pointer;
+        width: 1vw;
+        svg {
+          width: 100%;
+        }
+      }
+    }
+    .spinnerLoading {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .Result {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      .OkIcon {
+        width: 3vw;
+        margin: 5vh auto;
+        svg {
+          width: 100%;
+        }
+      }
+      .CLoseIcon {
+        width: 3vw;
+        margin: 5vh auto;
+        svg {
+          width: 100%;
+          line {
+            fill: #be625e !important;
+            stroke: #be625e !important;
+          }
+        }
+      }
+      .textResilt {
+        margin: 10vh 0;
+        .headResult {
+          font-family: 'Roboto', sans-serif;
+          font-weight: bold;
+          font-size: 22px;
+        }
+        .textResult {
+          margin-top: 1vh;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+      .closeBtn {
+        width: 10vw;
+        margin: 0 auto;
+        padding: 1vw;
+        text-align: center;
+        cursor: pointer;
+        background-color: #903732;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+        color: #fff;
+        transition: box-shadow .4s ease;
+        &:hover {
+          box-shadow: 0.97px 0.242px 18px 0px rgba(144, 55, 50, 0.63);
+        }
+      }
+    }
+    .content {
+      width: 80%;
+      margin: 7vh auto 6vh;
+      .nameContainer {
+        .nameText {
+          font-family: 'Roboto', sans-serif;
+          font-weight: bold;
+          color: rgb(68, 66, 62);
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+        .nameInput {
+          margin-top: 0.5vh;
+          position: relative;
+          .okIcon {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 1vh;
+            width: 1.2vw;
+            svg {
+              width: 100%;
+            }
+          }
+          .errorIcon {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 1vh;
+            width: 1.2vw;
+            svg {
+              width: 100%;
+              line {
+                fill: #be625e !important;
+                stroke: #be625e !important;
+              }
+            }
+          }
+          input {
+            font-size: 20px;
+            padding: 1vh;
+            border: 1px solid #e9e9e9;
+            background-color: #fbfbfc;
+            width: 100%;
+            outline: none;
+            &::placeholder {
+              font-size: 16px;
+              opacity: 0.5;
+            }
+          }
+        }
+        .nameValid {
+          position: relative;
+          .okIcon {
+            visibility: visible !important;
+          }
+        }
+        .nameError {
+          input {
+            border: 1px solid #be625e !important;
+          }
+          &:after {
+            position: absolute;
+            bottom: -2.5vh;
+            left: 0;
+            content: 'Ошибка';
+            color: #be625e;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .errorIcon {
+            visibility: visible !important;
+          }
+        }
+      }
+      .phoneContainer {
+        margin-top: 5vh;
+        .phoneText {
+          font-family: 'Roboto', sans-serif;
+          font-weight: bold;
+          color: rgb(68, 66, 62);
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+        .phoneInput {
+          margin-top: 0.5vh;
+          position: relative;
+          .okIcon {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 1vh;
+            width: 1.2vw;
+            svg {
+              width: 100%;
+            }
+          }
+          .errorIcon {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 1vh;
+            width: 1.2vw;
+            svg {
+              width: 100%;
+              line {
+                fill: #be625e !important;
+                stroke: #be625e !important;
+              }
+            }
+          }
+          input {
+            font-size: 20px;
+            padding: 1vh;
+            border: 1px solid #e9e9e9;
+            width: 100%;
+            background-color: #fbfbfc;
+            outline: none;
+            &::placeholder {
+              font-size: 16px;
+              opacity: 0.5;
+            }
+          }
+        }
+        .phoneValid {
+          position: relative;
+          .okIcon {
+            visibility: visible !important;
+          }
+        }
+        .phoneError {
+          input {
+            border: 1px solid #be625e !important;
+          }
+          &:after {
+            position: absolute;
+            bottom: -2.5vh;
+            left: 0;
+            content: 'Ошибка';
+            color: #be625e;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .errorIcon {
+            visibility: visible !important;
+          }
+        }
+      }
+    }
+    .btnContainer {
+      width: 80%;
+      margin: 0 auto;
+      .btn {
+        width: 11vw;
+        margin: 0 auto;
+        padding: .7vw;
+        text-align: center;
+        cursor: pointer;
+        background-color: #903732;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: #fff;
+        transition: box-shadow .4s ease;
+        &:hover {
+          box-shadow: 0.97px 0.242px 18px 0px rgba(144, 55, 50, 0.63);
+        }
+      }
+    }
+  }
+}
+.activeContainer {
+  visibility: visible;
+  .overlay {
+    opacity: 0.4;
+  }
+  .modalContainer {
+    transform: scale(1);
+  }
+}
